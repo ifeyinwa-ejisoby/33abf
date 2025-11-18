@@ -4,3 +4,12 @@ author: "Chris Annunziato"
 date: "`r Sys.Date()`"
 output: html_document
 ---
+
+```{r table_one, message = FALSE}
+here::i_am("report.Rmd")
+
+table_one <- readRDS(file = here::here("output/table_one.RDS"))
+
+table_one
+```
+
