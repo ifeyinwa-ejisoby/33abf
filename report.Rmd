@@ -4,11 +4,21 @@ author: "Chris Annunziato"
 date: "`r Sys.Date()`"
 output: html_document
 ---
+<<<<<<< HEAD
 ```{r}
 here::i_am("report.Rmd")
 ```
 
-```{r}
+```{r table_one, message = FALSE}
+here::i_am("report.Rmd")
+
+table_one <- readRDS(file = here::here("output/table_one.RDS"))
+
+table_one
+
+```
+
+```{r }
 #| fig.align = "center",
 #| out.width = "600px"
 knitr::include_graphics(
@@ -21,4 +31,5 @@ pneumonia_table <- readRDS(
   here::here("output/pneumonia_table.rds"))
 pneumonia_table
 ```
+
 
