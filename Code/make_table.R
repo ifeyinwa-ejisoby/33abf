@@ -7,6 +7,8 @@ covid_sub <- read.csv(here::here("raw_data/covid_sub.csv"))
 library(tidyverse)
 library(gtsummary)
 
+# Ensure the folder exists before saving
+dir.create(here::here("output"), showWarnings = FALSE, recursive = TRUE)
 
 # make table 1
 table_one <- covid_sub %>%

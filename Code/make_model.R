@@ -7,6 +7,8 @@ library(gtsummary)
 # load in raw data
 raw_data <- read.csv("raw_data/covid_sub.csv")
 
+# Ensure the folder exists before saving
+dir.create(here::here("output"), showWarnings = FALSE, recursive = TRUE)
 # clean data  
 data <- raw_data %>% 
   mutate(DEATH = ifelse(is.na(DATE_DIED), 0, 1), # make death indicator
