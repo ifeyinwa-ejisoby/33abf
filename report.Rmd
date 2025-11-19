@@ -4,7 +4,7 @@ author: "Chris Annunziato"
 date: "`r Sys.Date()`"
 output: html_document
 ---
-<<<<<<< HEAD
+
 ```{r}
 here::i_am("report.Rmd")
 ```
@@ -32,4 +32,8 @@ pneumonia_table <- readRDS(
 pneumonia_table
 ```
 
-
+```{r}
+logistic_reg_table <- readRDS(
+  here::here("output/logistic_reg_table.rds"))
+logistic_reg_table
+```
