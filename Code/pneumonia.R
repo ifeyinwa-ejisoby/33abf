@@ -6,7 +6,10 @@ library(here)
 here::i_am("code/pneumonia.R")
 
 # load data 
-covid <- read.csv("raw_data/covid_sub.csv")   
+covid <- read.csv("raw_data/covid_sub.csv")  
+
+# Ensure the folder exists before saving
+dir.create(here::here("output"), showWarnings = FALSE, recursive = TRUE)
 
 # remove NA values
 covid_clean <- covid |> 
