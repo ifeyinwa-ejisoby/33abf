@@ -3,6 +3,7 @@ here::i_am("Code/make_model.R")
 # load packages
 library(dplyr)
 library(gtsummary)
+library(broom)
 
 # load in raw data
 raw_data <- read.csv("raw_data/covid_sub.csv")

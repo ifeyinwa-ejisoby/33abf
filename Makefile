@@ -16,6 +16,9 @@ output/table_one.RDS: code/make_table.R raw_data/covid_sub.csv
 	
 output/logistic_reg_table: raw_data/covid_sub.csv
 	Rscript Code/make_model.R
+	
+install:
+	Rscript -e "options(renv.consent = TRUE); renv::restore(prompt = FALSE)"
 
 .PHONY: clean
 clean:

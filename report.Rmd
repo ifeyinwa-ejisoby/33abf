@@ -32,8 +32,4 @@ pneumonia_table <- readRDS(
 pneumonia_table
 ```
 
-```{r}
-logistic_reg_table <- readRDS(
-  here::here("output/logistic_reg_table.rds"))
-logistic_reg_table
-```
+
