@@ -1,0 +1,4 @@
+default:
+  plot_colors:
+    pneumonia_intubed_no:  "#A8D5E6" 
+    pneumonia_intubed_yes: "#F7A8B8"
