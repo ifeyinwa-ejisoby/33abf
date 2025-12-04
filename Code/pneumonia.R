@@ -5,7 +5,11 @@ library(here)
 
 here::i_am("code/pneumonia.R")
 
-# load data 
+# Read config
+config_list <- config::get()
+colors <- config_list$plot_colors 
+
+# Load data 
 covid <- read.csv("raw_data/covid_sub.csv")  
 
 # Ensure the folder exists before saving
@@ -21,7 +25,7 @@ covid_clean$INTUBED   <- factor(covid_clean$INTUBED,   levels = c("No", "Yes"))
 ## 2×2 Summary Table
 table_raw <- table(covid_clean$PNEUMONIA, covid_clean$INTUBED)
 
-# turn into a data frame for kable
+# Turn into a data frame for kable
 pneumonia_table <- as.data.frame.matrix(table_raw) |>
   rownames_to_column(var = "Pneumonia status")
 
@@ -42,8 +46,8 @@ saveRDS(
 pneumonia_plot <- ggplot(covid_clean, aes(x = PNEUMONIA, fill = INTUBED)) +
   geom_bar(position = "fill") +
   scale_fill_manual(
-    values = c("No" = "#A8D5E6",   
-               "Yes" = "#F7A8B8")  
+    values = c("No" = colors$pneumonia_intubed_no,   
+               "Yes" = colors$pneumonia_intubed_yes)  
   ) +
   scale_y_continuous(labels = percent_format()) +
   labs(
