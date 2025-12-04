@@ -1,6 +1,6 @@
 ---
 title: "Covid 19 Report"
-author: "Chris Annunziato, Anusha Chatterjee, Kelly Zhu, Ifeyinwa Ejisoby-Nwosi" 
+author: "Chris Annunziato, Anusha Chatterjee, Kelly Zhu, Ifeyinwa Ejisoby-Nwosu" 
 date: "`r Sys.Date()`"
 output: html_document
 ---

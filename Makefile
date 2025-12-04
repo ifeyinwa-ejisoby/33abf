@@ -1,4 +1,4 @@
-report.html: raw_data/covid_sub.csv output/pneumonia_plot.png output/pneumonia_plot.rds output/pneumonia_table.rds output/table_one.RDS output/logistic_reg_table
+report.html: raw_data/covid_sub.csv output/pneumonia_plot.png output/pneumonia_plot.rds output/pneumonia_table.rds output/table_one.RDS output/logistic_reg_table.rds
 	Rscript code/render_report.R
 
 
@@ -14,7 +14,7 @@ output/pneumonia_table.rds: code/pneumonia.R
 output/table_one.RDS: code/make_table.R raw_data/covid_sub.csv
 	Rscript code/make_table.R
 	
-output/logistic_reg_table: raw_data/covid_sub.csv
+output/logistic_reg_table.rds: raw_data/covid_sub.csv
 	Rscript Code/make_model.R
 	
 install:
